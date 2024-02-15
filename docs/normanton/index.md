@@ -22,7 +22,7 @@ A series of maps of different crime types in the Normanton neighbourhood of Derb
 
 # Dates
 
-Crimes are from January 2020 to December 2022 (the most current data available at the time of downloading in February 2023).
+Crimes are from January 2023 to December 2023 (the most current data available at the time of downloading in February 2024).
 
 
 # Citation
@@ -43,6 +43,9 @@ OpenStreetMap® is open data, licensed under the Open Data Commons Open Database
 
 ## Copyright
 
-Code: &copy; 2023 Phil Mike Jones and University of Derby.
+Code: &copy; 2023--24 Phil Mike Jones and University of Derby.
+
+
+## Acknowledgements
 
 Thanks [@sgetalbo](https://github.com/sgetalbo) for help getting the clusters to render.
