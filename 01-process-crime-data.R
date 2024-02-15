@@ -3,18 +3,16 @@ library("dplyr")
 library("sf")
 library("leaflet")
 
-if(!file.exists("lincoln/england_lad_2011.shp")) {
-    city = "lincoln"
-    zips = list.files(city, pattern = ".zip", full.names = TRUE)
-    lapply(zips, unzip, exdir = city)
-}
+normanton =
+    sf::read_sf("data/normanton-neighbourhood.shp") %>%
+    st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
-csvs = list.files("lincoln", recursive = TRUE, full.names = TRUE, pattern = ".csv")
-lincoln_crimes = lapply(csvs, readr::read_csv)
-lincoln_crimes = bind_rows(lincoln_crimes)
+csvs = list.files("data/normanton", recursive = TRUE, full.names = TRUE, pattern = ".csv")
+normanton_crimes = lapply(csvs, readr::read_csv)
+normanton_crimes = bind_rows(normanton_crimes)
 
-lincoln_crimes = 
-    lincoln_crimes %>%
+normanton_crimes = 
+    normanton_crimes %>%
     mutate(id = row_number()) %>%
     select(
         id,
@@ -31,20 +29,15 @@ lincoln_crimes =
     ) %>%
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
-    st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
+    st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")    
 
-lincoln = 
-    read_sf("lincoln/england_lad_2011.shp") %>%
-    st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
+normanton_crimes = filter(normanton_crimes, st_within(normanton_crimes, normanton, sparse = FALSE))
 
-lincoln_crimes = filter(lincoln_crimes, st_within(lincoln_crimes, lincoln, sparse = FALSE))
-glimpse(lincoln_crimes)
-
-crime_types = unique(lincoln_crimes$type)
+crime_types = unique(normanton_crimes$type)
 
 for (crime in crime_types) {
     dat = 
-        lincoln_crimes %>%
+        normanton_crimes %>%
         filter(type == crime)
     
     map =
@@ -60,5 +53,5 @@ for (crime in crime_types) {
         )
     
     crime = stringr::str_replace_all(crime, " ", "-")
-    withr::with_dir("./docs/", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
+    withr::with_dir("./docs/normanton", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
 }
