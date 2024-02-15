@@ -1,6 +1,8 @@
 # local library
 venv/
 
+data/
+
 # History files
 .Rhistory
 .Rapp.history
