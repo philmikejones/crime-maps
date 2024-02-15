@@ -5,6 +5,7 @@ A series of maps of different crime types in the Normanton neighbourhood of Derb
 
 ## Crime maps
 
+- [Anti--social behaviour](Anti-social-behaviour.html)
 - [Bicycle theft](Bicycle-theft.html)
 - [Burglary](Burglary.html)
 - [Criminal damage and arson](Criminal-damage-and-arson.html)
