@@ -41,6 +41,8 @@ See: https://data.police.uk/about/
 Basemaps are obtained from OpenStreetMap. &copy; OpenStreetMap contributors.
 OpenStreetMap® is open data, licensed under the Open Data Commons Open Database License (ODbL) by the OpenStreetMap Foundation (OSMF).
 
+The population of Normanton (n = 19,810) is from the [2021 UK Census](https://www.ons.gov.uk/census/aboutcensus). 
+
 
 ## Copyright
 
