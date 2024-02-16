@@ -1,4 +1,6 @@
 # Process crime data
+# Uses one year of data
+# Produces a map of each crime type in leaflet
 library("dplyr")
 library("sf")
 library("leaflet")
