@@ -33,7 +33,7 @@ crimes =
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")    
 
-crimes = filter(crimes, st_within(normanton_crimes, normanton, sparse = FALSE))
+crimes = filter(crimes, st_within(crimes, normanton, sparse = FALSE))
 
 types = unique(crimes$type)
 
@@ -43,7 +43,11 @@ b = count(b, month)
 
 p = 
     ggplot(b, aes(month, n)) + 
+    geom_vline(xintercept = ymd('2021-01-01'), linetype = "dashed") +
+    geom_vline(xintercept = ymd('2022-01-01'), linetype = "dashed") +
+    geom_vline(xintercept = ymd('2023-01-01'), linetype = "dashed") +
     geom_line() +
+    geom_smooth(method = "loess", formula = "y ~ x") +
     labs(x = "Month", y = "Number of offences", caption = "Burglary") +
     scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") +  # https://stackoverflow.com/a/42929948
     theme(axis.text.x=element_text(angle = 60, hjust = 1))
