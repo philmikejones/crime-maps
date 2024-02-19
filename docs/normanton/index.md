@@ -5,7 +5,7 @@ A series of maps of different crime types in the Normanton neighbourhood of Derb
 
 ## Crime maps and trends
 
-Map                                                                     | Trend
+Crime type                   | Map                                      | Trend
 ------------------------------------------------------------------------|-------
 Anti--social behaviour       | [Map](Anti-social-behaviour.html)        | [Trend](Anti-social behaviour-trend.pdf)
 Bicycle theft                | [Map](Bicycle-theft.html)                | [Trend](Bicycle theft-trend.pdf)
