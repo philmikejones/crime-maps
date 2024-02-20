@@ -31,9 +31,9 @@ normanton_crimes =
     ) %>%
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
-    st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")    
+    st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 
-normanton_crimes = filter(normanton_crimes, st_within(normanton_crimes, normanton, sparse = FALSE))
+normanton_crimes = normanton_crimes[normanton, ]
 
 crime_types = unique(normanton_crimes$type)
 
