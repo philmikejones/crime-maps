@@ -8,7 +8,7 @@ normanton =  # to clip crimes to normanton ward
     st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
 crimes = list.files("data/normanton", recursive = TRUE, full.names = TRUE, pattern = ".csv")
-crimes = lapply(crimes, readr::read_csv)
+crimes = lapply(crimes, readr::read_csv, show_col_types = FALSE)
 crimes = bind_rows(crimes)
 
 crimes = 
@@ -33,7 +33,7 @@ crimes =
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")    
 
-crimes = filter(crimes, st_within(crimes, normanton, sparse = FALSE))
+crimes = crimes[normanton, ]
 
 types = unique(crimes$type)
 
@@ -57,5 +57,7 @@ for(type in types) {
         p, width = 297, height = 210, units = "mm",
         file = paste0("docs/normanton/", type, "-trend.pdf"), title = paste0(type, " trend, Normanton, 2021-2023")
     )
+
+    print(paste0("Saved: ", type, "-trend.pdf"))
 
 }
