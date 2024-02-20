@@ -10,7 +10,7 @@ normanton =
     st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
 csvs = list.files("data/normanton/2023", recursive = TRUE, full.names = TRUE, pattern = ".csv")
-normanton_crimes = lapply(csvs, readr::read_csv)
+normanton_crimes = lapply(csvs, readr::read_csv, show_col_types = FALSE)
 normanton_crimes = bind_rows(normanton_crimes)
 
 normanton_crimes = 
