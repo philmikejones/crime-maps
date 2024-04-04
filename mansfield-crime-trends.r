@@ -3,7 +3,7 @@ library("lubridate")
 library("sf")
 library("ggplot2")
 
-mansfield =  # to clip crimes to normanton ward
+mansfield =
     sf::read_sf("data/mansfield/mansfield.gpkg") %>%
     st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
