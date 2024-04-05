@@ -1,6 +1,9 @@
 # local library
 venv/
 
+# before-after plots
+before-after/*.pdf
+
 data/
 data
 
