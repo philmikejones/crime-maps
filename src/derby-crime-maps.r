@@ -1,20 +1,24 @@
-# Process crime data
-# Uses one year of data
-# Produces a map of each crime type in leaflet
+# Produce leaflet interactive crime maps of
+# Derby Allestree and Darley with Mackworth and Morley
 library("dplyr")
 library("sf")
 library("leaflet")
 
-normanton =
-    sf::read_sf("data/normanton-neighbourhood.shp") %>%
+dir.create("docs/derby", showWarnings = FALSE)
+
+boundary =
+    sf::read_sf("data/boundaries/derby-allestree-mackworth.gpkg") %>%
     st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
-csvs = list.files("data/normanton/2023", recursive = TRUE, full.names = TRUE, pattern = ".csv")
-normanton_crimes = lapply(csvs, readr::read_csv, show_col_types = FALSE)
-normanton_crimes = bind_rows(normanton_crimes)
+crimes = list.files("data/crimes/derbyshire", recursive = TRUE, full.names = TRUE, pattern = ".csv")
+crimes = crimes[!grepl("2021", crimes)]
+crimes = crimes[!grepl("2022", crimes)]
 
-normanton_crimes = 
-    normanton_crimes %>%
+crimes = lapply(crimes, readr::read_csv, show_col_types = FALSE)
+crimes = bind_rows(crimes)
+
+crimes = 
+    crimes %>%
     mutate(id = row_number()) %>%
     select(
         id,
@@ -29,17 +33,20 @@ normanton_crimes =
         lat = `Latitude`,
         type = `Crime type`
     ) %>%
+    mutate(month = paste0(month, "-01")) |>
+    mutate(month = lubridate::as_date(month)) |>
+    filter(month > "2023-11-01") |>
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 
-normanton_crimes = normanton_crimes[normanton, ]
+crimes = crimes[boundary, ]
 
-crime_types = unique(normanton_crimes$type)
+crime_types = unique(crimes$type)
 
 for (crime in crime_types) {
     dat = 
-        normanton_crimes %>%
+        crimes %>%
         filter(type == crime)
     
     map =
@@ -55,5 +62,5 @@ for (crime in crime_types) {
         )
     
     crime = stringr::str_replace_all(crime, " ", "-")
-    withr::with_dir("./docs/normanton", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
+    withr::with_dir("./docs/derby", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
 }
