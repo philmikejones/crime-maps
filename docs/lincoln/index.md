@@ -1,6 +1,6 @@
 # Crimes in Lincoln
 
-A series of maps of different crime types in Lincoln.
+A series of maps of different crime types in Lincoln Abbey neighbourhood.
 
 
 ## Crime maps
@@ -23,6 +23,9 @@ A series of maps of different crime types in Lincoln.
 
 ## Sources
 
+**DO NOT CITE THIS PAGE (https://philmikejones.github.io/crime-maps/lincoln/index.html).**
+**CITE THE ORIGINAL DATA.**
+
 Single Online Home National Digital Team (2022) *ASB Incidents, Crime and Outcomes*. Available from https://data.police.uk [accessed February 22, 2022].
 Used under the terms of the Open Government Licence v3.0.
 See: https://data.police.uk/about/
@@ -33,6 +36,6 @@ OpenStreetMap® is open data, licensed under the Open Data Commons Open Database
 
 ## Copyright
 
-Code: &copy; 2022 Phil Mike Jones and University of Derby.
+Code: &copy; 2022--25 Phil Mike Jones and University of Derby.
 
 Thanks [@sgetalbo](https://github.com/sgetalbo) for help getting the clusters to render.
