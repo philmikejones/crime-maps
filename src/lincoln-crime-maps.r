@@ -1,5 +1,5 @@
 # Produce leaflet interactive crime maps of
-# Derby Allestree and Darley with Mackworth and Morley
+# Lincoln Abbey (around Lincoln College, Monks Road)
 library("dplyr")
 library("sf")
 library("leaflet")
