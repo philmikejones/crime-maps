@@ -2,10 +2,10 @@
 
 Crime maps of the following case study areas:
 
-- Derby ([Mackworth and Morley](https://www.police.uk/pu/your-area/derbyshire-constabulary/mackworth-and-morley) combined with [Allestree and Darley](https://www.police.uk/pu/your-area/derbyshire-constabulary/allestree-and-darley))
-- Lincoln ([Lincoln Abbey](https://www.police.uk/pu/your-area/lincolnshire-police/lincoln-abbey))
-- Mansfield, Nottinghamshire ([Mansfield Town Centre](https://www.police.uk/pu/your-area/nottinghamshire-police/mansfield-town-centre))
-- Nottingham ([Sherwood](https://www.police.uk/pu/your-area/nottinghamshire-police/sherwood))
+- Derby ([Mackworth and Morley](https://www.police.uk/pu/your-area/derbyshire-constabulary/mackworth-and-morley) (`SN-01`) combined with [Allestree and Darley](https://www.police.uk/pu/your-area/derbyshire-constabulary/allestree-and-darley) (`SN-02`))
+- Lincoln ([Lincoln Abbey](https://www.police.uk/pu/your-area/lincolnshire-police/lincoln-abbey) (`NC-12`))
+- Mansfield, Nottinghamshire ([Mansfield Town Centre](https://www.police.uk/pu/your-area/nottinghamshire-police/mansfield-town-centre) (`31-9`))
+- Nottingham ([Sherwood](https://www.police.uk/pu/your-area/nottinghamshire-police/sherwood) (`31-50`))
 
 
 # Crime
