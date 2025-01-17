@@ -1,6 +1,6 @@
 # Crimes in Mansfield, Nottinghamshire
 
-A series of maps of different crime types in Mansfield.
+A series of maps of different crime types in Mansfield Town Centre neighbourhood.
 
 
 ## Crime maps and trends
@@ -30,7 +30,7 @@ Crimes are from 1 October 2017 to 30 September 2019, to coincide with the timesc
 
 # Citation
 
-DO NOT cite these pages.
+**DO NOT cite these pages.**
 Cite the original `police.uk` data: [https://data.police.uk/about/](https://data.police.uk/about/)
 
 
@@ -48,7 +48,7 @@ The population of Mansfield is approximately 108,000 in 2018 ([2021 UK Census](h
 
 ## Copyright
 
-Code: &copy; 2023--24 Phil Mike Jones and University of Derby.
+Code: &copy; 2023--25 Phil Mike Jones and University of Derby.
 
 
 ## Acknowledgements
