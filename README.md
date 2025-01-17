@@ -8,6 +8,7 @@ Crime maps of the following case study areas:
 - Nottingham ([Sherwood](https://www.police.uk/pu/your-area/nottinghamshire-police/sherwood))
 
 
-# Data
+# Crime
 
 - Crime data from [data.police.uk](https://data.police.uk/data/)
+- Unzip with `-j` to 'junk' (collapse) paths and extract all `.zip` files into same directory.
