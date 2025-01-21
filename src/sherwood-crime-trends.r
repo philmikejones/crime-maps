@@ -36,6 +36,7 @@ crimes =
     mutate(month = lubridate::as_date(month)) |>
     # StreetAid device installed in August 2023
     filter(month > "2022-10-01") |>
+    filter(month < "2023-10-01") |>
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
