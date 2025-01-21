@@ -13,8 +13,6 @@ boundary =
 crimes = list.files("data/crimes/nottinghamshire", recursive = TRUE, full.names = TRUE, pattern = ".csv")
 crimes = crimes[!grepl("2021", crimes)]
 
-stop("Waiting for dates from Sherwood neighbourhood team")
-
 crimes = lapply(crimes, readr::read_csv, show_col_types = FALSE)
 crimes = bind_rows(crimes)
 
@@ -36,7 +34,8 @@ crimes =
     ) %>%
     mutate(month = paste0(month, "-01")) |>
     mutate(month = lubridate::as_date(month)) |>
-    filter(month > "2023-11-01") |>
+    # StreetAid device installed in August 2023
+    filter(month > "2022-10-01") |>
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
@@ -63,5 +62,5 @@ for (crime in crime_types) {
         )
     
     crime = stringr::str_replace_all(crime, " ", "-")
-    withr::with_dir("./docs/derby", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
+    withr::with_dir("./docs/sherwood", htmlwidgets::saveWidget(map, file = paste0(crime, ".html")))
 }
