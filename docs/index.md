@@ -6,3 +6,4 @@ Crime maps for the following case studies:
 - [Lincoln (Lincoln Abbey)](lincoln/index.html)
 - [Mansfield (Town Centre)](mansfield/index.html)
 - [Normanton, Derby](normanton/index.html)
+- [Sherwood, Nottingham](sherwood/index.html)
