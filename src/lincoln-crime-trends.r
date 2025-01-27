@@ -68,4 +68,13 @@ asb =
     group_by(month) |>
     count()
 readr::write_csv(asb, file = "docs/lincoln/asb-counts.csv")
-print("Exported Lincoln ASB counts")
+
+
+vso = crimes[crimes$type == "Violence and sexual offences", ]
+vso =
+    vso |>
+    st_set_geometry(NULL) |>
+    group_by(month) |>
+    count()
+readr::write_csv(vso, file = "docs/lincoln/vso-counts.csv")
+print("Exported Lincoln crime counts")
