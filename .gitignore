@@ -1,3 +1,7 @@
+# monthly crime counts
+# (exported to docs/ for use in scenario documents)
+docs/*/*.csv
+
 # local library
 venv/
 

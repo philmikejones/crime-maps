@@ -59,3 +59,13 @@ for(type in types) {
     print(paste0("Saved: ", type, "-trend.pdf"))
 
 }
+
+# Export monthly counts for scenarios
+asb = crimes[crimes$type == "Anti-social behaviour", ]
+asb = 
+    asb |>
+    st_set_geometry(NULL) |>
+    group_by(month) |>
+    count()
+readr::write_csv(asb, file = "docs/lincoln/asb-counts.csv")
+print("Exported Lincoln ASB counts")
