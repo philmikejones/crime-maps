@@ -26,7 +26,7 @@ Violence and sexual offences | [Map](Violence-and-sexual-offences.html) | [Trend
 
 # Dates
 
-Crimes are from December 2024 to November 2024, inclusive (the most current twelve months of data available at the time of downloading in January 2025).
+Crimes are from December 2023 to November 2024, inclusive (the most current twelve months of data available at the time of downloading in January 2025).
 
 
 # Citation
