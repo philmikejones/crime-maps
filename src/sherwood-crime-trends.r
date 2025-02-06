@@ -3,7 +3,7 @@ library("lubridate")
 library("sf")
 library("ggplot2")
 
-boundary =  # to clip crimes to normanton ward
+boundary =
     sf::read_sf("data/boundaries/sherwood.kml") %>%
     st_transform(crs = st_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
 
@@ -11,8 +11,6 @@ crimes = list.files("data/crimes/nottinghamshire", recursive = TRUE, full.names 
 crimes = crimes[!grepl("2017", crimes)]
 crimes = crimes[!grepl("2018", crimes)]
 crimes = crimes[!grepl("2019", crimes)]
-crimes = crimes[!grepl("2020", crimes)]
-crimes = crimes[!grepl("2021", crimes)]
 
 crimes = lapply(crimes, readr::read_csv, show_col_types = FALSE)
 crimes = bind_rows(crimes)
@@ -36,8 +34,7 @@ crimes =
     mutate(month = paste0(month, "-01")) %>%
     mutate(month = lubridate::as_date(month)) %>%
     # Streetaid device was installed in August 2023
-    filter(month >= "2022-10-01") |>
-    filter(month <= "2024-07-01") |>
+    filter(month <= "2023-08-01") |>
     filter(!is.na(long), !is.na(lat)) %>%
     st_as_sf(coords = c("long", "lat")) %>%
     st_set_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
@@ -53,7 +50,7 @@ for(type in types) {
 
     p = 
         ggplot(dat, aes(month, n)) + 
-        geom_vline(xintercept = ymd('2023-08-01'), linetype = "dashed") +
+        # geom_vline(xintercept = ymd('2023-08-01'), linetype = "dashed") +
         geom_line() +
         geom_smooth(method = "loess", formula = "y ~ x") +
         labs(x = "Month", y = "Number of offences", caption = type) +
