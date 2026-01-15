@@ -7,24 +7,22 @@
 
 
 
-## Crime maps and trends
+## Crime maps
 
-Crime type                   | Map                                     
------------------------------------------------------------------------
-Anti--social behaviour       | [Map](Anti-social-behaviour.html)       
-Bicycle theft                | [Map](Bicycle-theft.html)               
-Burglary                     | [Map](Burglary.html)                    
-Criminal damage and arson    | [Map](Criminal-damage-and-arson.html)   
-Drugs                        | [Map](Drugs.html)                       
-Other crime                  | [Map](Other-crime.html)                 
-Other theft                  | [Map](Other-theft.html)                 
-Possession of weapons        | [Map](Possession-of-weapons.html)       
-Public order                 | [Map](Public-order.html)                
-Robbery                      | [Map](Robbery.html)                     
-Shoplifting                  | [Map](Shoplifting.html)                 
-Theft from the person        | [Map](Theft-from-the-person.html)       
-Vehicle crime                | [Map](Vehicle-crime.html)               
-Violence and sexual offences | [Map](Violence-and-sexual-offences.html)
+- [Anti--social behaviour](Anti-social-behaviour.html)       
+- [Bicycle theft](Bicycle-theft.html)               
+- [Burglary](Burglary.html)                    
+- [Criminal damage and arson](Criminal-damage-and-arson.html)   
+- [Drugs](Drugs.html)                       
+- [Other crime](Other-crime.html)                 
+- [Other theft](Other-theft.html)                 
+- [Possession of weapons](Possession-of-weapons.html)       
+- [Public order](Public-order.html)                
+- [Robbery](Robbery.html)                     
+- [Shoplifting](Shoplifting.html)                 
+- [Theft from the person](Theft-from-the-person.html)       
+- [Vehicle crime](Vehicle-crime.html)               
+- [Violence and sexual offences](Violence-and-sexual-offences.html)
 
 
 # Dates
